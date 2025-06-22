@@ -1,0 +1,107 @@
+ body {
+    color: rgb(0, 0, 0);
+    width: 100%; 
+    height: 100vh;
+    background: black url('../imagen/ornamental_1.png.png') no-repeat center center;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+        .botones{
+  padding: 9px; 
+  border-radius:80px;
+  background-color: transparent; 
+  border: none;
+}
+
+.botones a{
+  background-color:rgb(0, 0, 0);
+  padding: 9px;
+  border-radius: 80px;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  -ms-border-radius: 80px; 
+  -o-border-radius: 80px; 
+}
+
+.botones a:focus{
+  background-color: srgb(0, 0, 0)
+}
+
+.greetings{
+  font-size: 10rem;
+  font-weight: 900; 
+}
+
+.greetings > span{
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow{
+  5%, 100%{
+    color:rgb(255, 4, 4);
+    text-shadow: 0 0 12px #ff0000, 0 0 50px #ffffff, 0 0 100px #ff0000;
+  }
+  80%, 90%{
+    color:#000000;
+    text-shadow: none;
+  }
+}
+
+.greetings > span:nth-child(2){
+  animation-delay: .2s ; 
+}
+
+.greetings > span:nth-child(3){
+  animation-delay: .4s ; 
+}
+
+.greetings > span:nth-child(4){
+  animation-delay: .6s ; 
+}
+
+.greetings > span:nth-child(5){
+  animation-delay: .8s; 
+}
+
+.greetings > span:nth-child(6){
+  animation-delay: .10s ; 
+}
+
+.description{
+  font-size: 1.5rem;
+  margin-bottom: 20px; 
+}
+
+.buttom a{
+  text-decoration: none; 
+  font-size: 1rem;
+  color: #000000; 
+}
+
+@media screen and (max-width:574px){
+  .greetings{
+    display: block;
+    font-size: 4rem;
+    font-weight: 800; 
+    text-align: center;
+  }
+  .description{
+    font-size: 1rem;
+  }
+
+   .description{
+    font-size: 2rem;
+  }
+
+  .button a{
+    font-size: 1rem;
+  }
+
+}
+
