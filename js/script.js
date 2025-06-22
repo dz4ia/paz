@@ -1,6 +1,18 @@
 window.onload = function () {
+
+
+
   const canvas = document.getElementById('matrix');
   const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+    const estrellas = Array.from({ length: 150 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  radio: Math.random() * 1.5,
+  alpha: Math.random()
+}));
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -21,8 +33,16 @@ window.onload = function () {
 
   function dibujar() {
     // Fondo totalmente opaco para eliminar el "rastro"
-    ctx.fillStyle = 'rgb(82, 31, 31)';
+    ctx.fillStyle = 'rgba(79, 8, 8, 0.2)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Dibujar estrellas
+estrellas.forEach((e) => {
+  ctx.beginPath();
+  ctx.arc(e.x, e.y, e.radio, 0, 2 * Math.PI);
+  ctx.fillStyle = `rgba(255, 255, 255, ${e.alpha})`;
+  ctx.fill();
+});
 
     ctx.font = fontSize + 'px monospace';
     ctx.textAlign = 'center';
@@ -42,3 +62,4 @@ window.onload = function () {
 
   setInterval(dibujar, 5);
 };
+
